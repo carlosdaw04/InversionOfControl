@@ -37,4 +37,17 @@ public class Rutas {
 		
 		return salida;
 	}
+
+	
+	
+	@GetMapping("/singleton1")
+	@ResponseBody		//Esta etiqueta devuelve a la pagina web el mensaje del return
+	public String rutaSingleton() {
+		
+		return componenteNombres.toString();
+	}
+	
+	
+	
 }
+
