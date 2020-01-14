@@ -12,7 +12,7 @@ public class MasRutas {
 
 	
 	@Autowired
-	public ComponenteNombres componenteNombres;
+	ComponenteNombres componenteNombres;
 	
 	@GetMapping("/singleton2")
 	@ResponseBody		//Esta etiqueta devuelve a la pagina web el mensaje del return
