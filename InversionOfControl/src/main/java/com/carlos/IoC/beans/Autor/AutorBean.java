@@ -21,6 +21,6 @@ public class AutorBean {
 	
 	@Override
 	public String toString() {
-		return hashCode() +"[ "+ nombre + ", " + edad + "]";
+		return this.hashCode() +"[ "+ nombre + ", " + edad + "]";
 	}
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.carlos.IoC.beans.Autor.AutorBean;
+import com.carlos.IoC.servicio.ComponenteNombres;
 
 @Controller
 public class Rutas {
@@ -21,11 +22,19 @@ public class Rutas {
 	@Qualifier("juan")
 	AutorBean pedro;
 	
+	@Autowired
+	ComponenteNombres componenteNombres;
+	
 	
 	@GetMapping("/")
 	@ResponseBody		//Esta etiqueta devuelve a la pagina web el mensaje del return
 	public String rutaInicial() {
 		
-		return juan + " <br> " +  maria + "<br>" + pedro;
+		String salida = "";
+		for(String str : componenteNombres.getNombres()) {
+			salida += str + "<br>";
+		}
+		
+		return salida;
 	}
 }
